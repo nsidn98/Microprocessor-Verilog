@@ -18,11 +18,12 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module CU(addr,number,opcode,addr1,addr2,addr3);
+module CU(addr,data_bus,opcode,addr1,read,write,load_immediate,flag_register);
 input [31:0] addr;
 output [15:0] data_bus;
 output [3:0] opcode;
 output [4:0] addr1;
+output [3:0] flag_register;
 output read;
 output write;
 output load_immediate;
