@@ -30,13 +30,13 @@ integer i;
 
 always @(read_write)
 begin
-if (read_write == 1)
-begin
-  reg_array[addr] <= data_in ;// store 
-end
-else
-begin 
-	data_out <= reg_array[addr];//load
-end
+	if (read_write == 1)
+	begin
+  		reg_array[addr] <= data_in ;// store 
+	end
+	else
+	begin 
+		data_out <= reg_array[addr];//load
+	end
 end	
 endmodule
