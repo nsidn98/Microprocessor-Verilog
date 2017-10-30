@@ -19,18 +19,18 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module EU(a,b,opcode,flag,out,addr1,addr2,addr3);
-output reg[7:0] a;
-output reg[7:0] b;
+output reg[15:0] a;
+output reg[15:0] b;
 input [3:0] opcode;
 input [4:0] addr1;
 input [4:0] addr2;
 input [4:0] addr3;
 output [3:0] flag;
-output [7:0] out;
+output [15:0] out;
 wire c;
 wire d=0;
-wire [7:0]temp_in_1;//to pass in the modules we need temporary registers
-wire [7:0] temp_out_1;
+wire [15:0]temp_in_1;//to pass in the modules we need temporary registers
+wire [15:0] temp_out_1;
 wire [4:0] temp_addr;
 memory MEMORY(.data_in(temp_in_1),.data_out(temp_out_1),.read_write(c),.addr(temp_addr));
 top_model ALU(.opcode(opcode),.a(a),.b(b),.flag(flag),.out(out));
