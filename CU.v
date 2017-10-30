@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module CU(addr,data_bus,opcode,addr1,read,write,load_immediate,flag_register);
+module CU(addr,data_bus,opcode,addr1,read,write,opcode_enable,flag_register);
 input [31:0] addr;
 output [15:0] data_bus;
 output [3:0] opcode;
@@ -26,7 +26,7 @@ output [4:0] addr1;
 output [3:0] flag_register;
 output read;
 output write;
-output load_immediate;
+output opcode_enable;
 
 //output [4:0] addr2;
 //output [4:0] addr3;
@@ -36,7 +36,7 @@ assign data_bus=addr[31:16];
 assign addr1=addr[15:11];
 assign read=addr[10];
 assign write=addr[9];
-assign load_immediate=addr[8];
+assign opcode_enable=addr[8];
 assign opcode=addr[7:4];
 assign flag_register=addr[3:0];
 /*assign opcode[3:0]=addr[31:28];
