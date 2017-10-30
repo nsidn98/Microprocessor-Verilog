@@ -19,12 +19,12 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module top_model(opcode,a,b,flag,out);
-input [7:0] a;
-input [7:0] b;
+input [15:0] a;
+input [15:0] b;
 input [3:0] opcode;
 output reg [3:0] flag;
-output reg [7:0] out;
-reg [15:0] temp;
+output reg [15:0] out;
+reg [16:0] temp;
 // flag 0000 no flag
 //		  1000 carry
 //		  0010 zero flag
@@ -36,14 +36,14 @@ always @(*)
 		case(opcode)
 			4'b0000 :begin
 						assign temp=a+b;
-						assign out=temp[7:0];
-						if(temp[8]==1) begin flag=4'b1000;end
+						assign out=temp[15:0];
+						if(temp[16]==1) begin flag=4'b1000;end
 						else begin flag=4'b0000 ;end
 						$display("Addition operation");
 			end
 			4'b0001:begin
 						assign temp=a-b;
-						assign out=temp[7:0];
+						assign out=temp[15:0];
 						if(a<b) begin flag=4'b0100;end
 						else if(a==b) flag=4'b0010; 
 						else assign flag=4'b0000;
