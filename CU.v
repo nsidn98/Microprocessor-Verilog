@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module CU(addr,data_bus,opcode,addr1,addr2,addr3,load_immediate);
+module CU(addr,data_bus,opcode,addr1,addr2,addr3,load_immediate,read_write);
 input [36:0] addr;
 output [15:0] data_bus;
 output [3:0] opcode;
