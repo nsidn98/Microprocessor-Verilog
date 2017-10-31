@@ -79,6 +79,10 @@ always @(*)
 						$display("Right Shift operation");
 						end			
 			endcase
+		
+			4'b0111:begin
+						assign out=a;		
+			endcase
 
 end			
 						
