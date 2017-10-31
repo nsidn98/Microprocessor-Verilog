@@ -18,9 +18,10 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module CU(addr,data_bus,opcode,addr1,addr2,addr3,load_immediate,read_write);
-input [36:0] addr;
-output [15:0] data_bus;
+module CU(addr,data_bus_1,data_bus_2,opcode,addr1,addr2,addr3,load_immediate,read_write);
+input [52:0] addr;
+output [15:0] data_bus_1;
+output [15:0] data_bus_2;
 output [3:0] opcode;
 output [4:0] addr1;
 output [4:0] addr2;
@@ -28,7 +29,8 @@ output [4:0]addr3;
 output load_immediate;
 output read_write;  
 
-assign data_bus=addr[36:21];
+assign data_bus_1=addr[52:37];  
+assign data_bus_2=addr[36:21];
 assign opcode[3:0]=addr[20:17];
 assign load_immediate=addr[16];
 assign read_write=addr[15];
