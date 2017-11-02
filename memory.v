@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module memory(data_in,data_out,read_write,addr);
+module MEMORY(data_in,data_out,read_write,addr);
 input [7:0] data_in;
 input read_write;
 input [4:0] addr;
