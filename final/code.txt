@@ -1,0 +1,6 @@
+LD R1,#3
+LD R2,#5
+ADD R3,R1,R2
+STR #1,R3
+RD R5,#1
+	
